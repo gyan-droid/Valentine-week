@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const message = document.getElementById("message");
     const heartContainer = document.getElementById("heartContainer");
     const song = document.getElementById("valentineSong");
+    const backgroundImage = document.getElementById("backgroundImage");
 
     function createHeart() {
         const heart = document.createElement("div");
@@ -27,12 +28,18 @@ document.addEventListener("DOMContentLoaded", function () {
         showHearts();
     }
 
+    function showBackgroundImage() {
+        backgroundImage.classList.add("show-background"); // Fade in the background image
+    }
+
     yesButton.addEventListener("click", function () {
         showMessage("I caught you, and I'm not gonna let you go. He he he he.");
+        showBackgroundImage();
         song.play().catch(error => console.log("Audio playback error:", error));
     });
 
     noButton.addEventListener("click", function () {
         showMessage("You have no option of saying no.<br><br>I caught you, and I'm not gonna let you go. He he he he.");
+        showBackgroundImage();
     });
 });
