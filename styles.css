@@ -1,57 +1,110 @@
+/* Romantic Background */
 body {
-    background: url('file-2KKJAHgbAA8ZwkWFEc8ih4') no-repeat center center fixed;
+    background: url('original-background.jpg') no-repeat center center fixed;
     background-size: cover;
-    font-family: Arial, sans-serif;
     text-align: center;
-    color: white;
+    font-family: Arial, sans-serif;
 }
 
-#container {
-    margin-top: 20%;
-}
-
-button {
-    padding: 15px 25px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-    margin: 10px;
-}
-
-#yes {
-    background-color: pink;
-}
-
-#no {
-    background-color: red;
-    color: white;
-}
-
+/* Hide pages initially */
 .hidden {
     display: none;
 }
 
-#message {
+/* Romantic Title */
+.romantic-title {
+    font-size: 2.5rem;
+    margin-top: 50px;
+    text-shadow: 2px 2px 5px black;
+}
+
+/* Centered Content */
+.container {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 24px;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 20px;
+}
+
+/* Buttons */
+button {
+    font-size: 18px;
+    padding: 12px 25px;
+    margin: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yesButton, #thinkYes {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+#noButton, #thinkNo {
+    background-color: #4d79ff;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Valentine Image */
+#valentineImage {
+    width: 200px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
     border-radius: 10px;
 }
 
-.heart {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background: url('heart.png') no-repeat center center;
-    background-size: contain;
-    animation: float 3s linear infinite;
+/* "Think Again" Section */
+#gunGif {
+    width: 120px;
+    display: block;
+    margin: 10px auto;
 }
 
-@keyframes float {
+#thinkAgainText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Final Message */
+#finalPage p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+}
+
+/* Dance GIF */
+#danceGif {
+    width: 150px;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Flying Hearts Animation - Increased More Hearts */
+.heart {
+    position: absolute;
+    font-size: 24px;
+    animation: floatUp 6s linear infinite;
+    color: red;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
     0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-500px); opacity: 0; }
+    100% { transform: translateY(-800px); opacity: 0; }
+}
+
+/* More Hearts Generation */
+@keyframes heartFall {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-600px) scale(0.5); opacity: 0; }
 }
