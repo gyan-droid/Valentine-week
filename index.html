@@ -3,38 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine Proposal</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="firstPage" class="container">
-        <h1 class="romantic-title">Will you be my Valentine? ❤️</h1>
-        <img id="valentineImage" src="Pi7_Passport_Photo.jpeg" alt="Valentine Photo">
-        <div class="buttons">
-            <button id="yesButton">Yes</button>
-            <button id="noButton">No</button>
+    <div id="container">
+        <div id="question">
+            <h1>Will You Be My Valentine?</h1>
+            <button id="yes">Yes</button>
+            <button id="no">No</button>
         </div>
     </div>
 
-    <!-- "Think Again" Page -->
-    <div id="thinkAgainPage" class="container hidden">
-        <img id="gunGif" src="gun.gif" alt="Gun GIF">
-        <p id="thinkAgainText">Think Again</p>
-        <button id="thinkYes">Yes</button>
-        <button id="thinkNo">No</button>
+    <div id="message" class="hidden">
+        <p id="final-message"></p>
+        <img id="response-gif" class="hidden" />
     </div>
-
-    <!-- Final Message Page -->
-    <div id="finalPage" class="container hidden">
-        <img id="danceGif" src="dance.gif" alt="Dance GIF">
-        <p>Yay, I got you my princess, and I'm never gonna let you go. You are mine forever.</p>
-    </div>
-
-    <audio id="valentineSong" src="valentine_song.mp3"></audio>
-
-    <div id="heartContainer"></div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
