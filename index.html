@@ -8,36 +8,32 @@
 </head>
 <body>
 
-    <div class="container">
+    <div id="firstPage" class="container">
         <h1 class="romantic-title">Will you be my Valentine? ❤️</h1>
-
-        <!-- Displaying the initial image -->
         <img id="valentineImage" src="Pi7_Passport_Photo.jpeg" alt="Valentine Photo">
-
         <div class="buttons">
             <button id="yesButton">Yes</button>
             <button id="noButton">No</button>
         </div>
+    </div>
 
-        <!-- "Are you sure?" Section -->
-        <div id="areYouSureContainer" class="hidden">
-            <img id="gunGif" src="gun.gif" alt="Gun GIF">
-            <p id="areYouSureText">Are you sure?</p>
-            <button id="areYouSureYes">Yes</button>
-            <button id="areYouSureNo">No</button>
-        </div>
+    <!-- "Think Again" Page -->
+    <div id="thinkAgainPage" class="container hidden">
+        <img id="gunGif" src="gun.gif" alt="Gun GIF">
+        <p id="thinkAgainText">Think Again</p>
+        <button id="thinkYes">Yes</button>
+        <button id="thinkNo">No</button>
+    </div>
 
-        <!-- Final Message & Dance GIF -->
-        <div id="finalMessage" class="hidden">
-            <img id="danceGif" src="dance.gif" alt="Dance GIF">
-            <p>Yay, I got you my princess, and I'm never gonna let you go. You are mine forever.</p>
-        </div>
-
-        <!-- Hearts animation -->
-        <div id="heartContainer"></div>
+    <!-- Final Message Page -->
+    <div id="finalPage" class="container hidden">
+        <img id="danceGif" src="dance.gif" alt="Dance GIF">
+        <p>Yay, I got you my princess, and I'm never gonna let you go. You are mine forever.</p>
     </div>
 
     <audio id="valentineSong" src="valentine_song.mp3"></audio>
+
+    <div id="heartContainer"></div>
 
     <script src="script.js"></script>
 </body>
