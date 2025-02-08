@@ -8,25 +8,34 @@
 </head>
 <body>
 
-    <div class="overlay"></div> <!-- Transparent layer for readability -->
-
     <div class="container">
         <h1 class="romantic-title">Will you be my Valentine? ❤️</h1>
+
+        <!-- Displaying the initial image -->
+        <img id="valentineImage" src="Pi7_Passport_Photo.jpeg" alt="Valentine Photo">
 
         <div class="buttons">
             <button id="yesButton">Yes</button>
             <button id="noButton">No</button>
         </div>
 
-        <!-- Message Display -->
-        <div id="message" class="hidden"></div>
+        <!-- "Are you sure?" Section -->
+        <div id="areYouSureContainer" class="hidden">
+            <img id="gunGif" src="gun.gif" alt="Gun GIF">
+            <p id="areYouSureText">Are you sure?</p>
+            <button id="areYouSureYes">Yes</button>
+            <button id="areYouSureNo">No</button>
+        </div>
+
+        <!-- Final Message & Dance GIF -->
+        <div id="finalMessage" class="hidden">
+            <img id="danceGif" src="dance.gif" alt="Dance GIF">
+            <p>Yay, I got you my princess, and I'm never gonna let you go. You are mine forever.</p>
+        </div>
 
         <!-- Hearts animation -->
         <div id="heartContainer"></div>
     </div>
-
-    <!-- Background Image (Initially Hidden) -->
-    <div id="backgroundImage" class="hidden"></div>
 
     <audio id="valentineSong" src="valentine_song.mp3"></audio>
 
