@@ -1,65 +1,35 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const firstPage = document.getElementById("firstPage");
-    const thinkAgainPage = document.getElementById("thinkAgainPage");
-    const finalPage = document.getElementById("finalPage");
-
-    const yesButton = document.getElementById("yesButton");
-    const noButton = document.getElementById("noButton");
-    const thinkYes = document.getElementById("thinkYes");
-    const thinkNo = document.getElementById("thinkNo");
-
-    const heartContainer = document.getElementById("heartContainer");
-    const song = document.getElementById("valentineSong");
-
-    let moveNoButton = false;
-
-    function createHeart() {
-        const heart = document.createElement("div");
-        heart.classList.add("heart");
-        heart.innerHTML = "❤️";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = Math.random() * 2 + 3 + "s";
-        heartContainer.appendChild(heart);
-        setTimeout(() => heart.remove(), 4000);
-    }
-
-    function showHearts() {
-        for (let i = 0; i < 20; i++) {
-            setTimeout(createHeart, i * 200);
-        }
-    }
-
-    // When "Yes" is clicked on the first page
-    yesButton.addEventListener("click", function () {
-        firstPage.classList.add("hidden");
-        finalPage.classList.remove("hidden");
-        showHearts();
-        song.play().catch(error => console.log("Audio playback error:", error));
-    });
-
-    // When "No" is clicked on the first page
-    noButton.addEventListener("click", function () {
-        firstPage.classList.add("hidden");
-        thinkAgainPage.classList.remove("hidden");
-    });
-
-    // When "No" is clicked on "Think Again"
-    thinkNo.addEventListener("click", function () {
-        if (!moveNoButton) {
-            moveNoButton = true;
-        }
-
-        // Move the "No" button randomly
-        thinkNo.style.position = "absolute";
-        thinkNo.style.top = Math.random() * 80 + "vh";
-        thinkNo.style.left = Math.random() * 80 + "vw";
-    });
-
-    // When "Yes" is clicked on "Think Again"
-    thinkYes.addEventListener("click", function () {
-        thinkAgainPage.classList.add("hidden");
-        finalPage.classList.remove("hidden");
-        showHearts();
-        song.play().catch(error => console.log("Audio playback error:", error));
-    });
+document.getElementById("yes").addEventListener("click", function() {
+    document.getElementById("question").classList.add("hidden");
+    document.getElementById("message").classList.remove("hidden");
+    document.getElementById("final-message").innerText = "Yay, I got you my princess, and I'm never gonna let you go. You are mine forever.";
+    document.getElementById("response-gif").src = "dance.gif";
+    document.getElementById("response-gif").classList.remove("hidden");
+    createHearts(30);
 });
+
+document.getElementById("no").addEventListener("click", function() {
+    document.getElementById("question").classList.add("hidden");
+    document.getElementById("message").classList.remove("hidden");
+    document.getElementById("final-message").innerText = "You have no option of saying no.";
+    document.getElementById("response-gif").src = "gun.gif";
+    document.getElementById("response-gif").classList.remove("hidden");
+    moveNoButton();
+});
+
+function createHearts(num) {
+    for (let i = 0; i < num; i++) {
+        let heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = Math.random() * window.innerHeight + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 3000);
+    }
+}
+
+function moveNoButton() {
+    let noButton = document.getElementById("no");
+    noButton.style.position = "absolute";
+    noButton.style.left = Math.random() * (window.innerWidth - 100) + "px";
+    noButton.style.top = Math.random() * (window.innerHeight - 50) + "px";
+}
