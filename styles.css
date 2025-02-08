@@ -1,45 +1,23 @@
-/* Full-screen Background Image (Initially Hidden) */
-#backgroundImage {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('gyanendra_riya.jpg') no-repeat center center fixed;
-    background-size: cover;
-    opacity: 0; /* Start invisible */
-    transition: opacity 2s ease-in-out; /* Slow fade-in effect */
+/* Pink Romantic Background */
+body {
+    background-color: #ffb6c1; /* Light pink */
+    text-align: center;
+    font-family: Arial, sans-serif;
 }
 
-/* Show Background Image */
-.show-background {
-    opacity: 1;
-}
-
-/* Dark overlay for better text readability */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Soft transparent layer */
-}
-
-/* Romantic Style */
+/* Romantic Title */
 .romantic-title {
     font-size: 2.5rem;
     margin-top: 50px;
     text-shadow: 2px 2px 5px black;
 }
 
-/* Centered content */
+/* Centered Content */
 .container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1; /* Above the overlay */
 }
 
 /* Buttons */
@@ -67,17 +45,46 @@ button:hover {
     transform: scale(1.1);
 }
 
-/* Message Box */
-#message {
+/* Valentine Image */
+#valentineImage {
+    width: 200px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* "Are you sure?" Section */
+#areYouSureContainer {
+    margin-top: 20px;
+}
+
+#gunGif {
+    width: 120px;
+    display: block;
+    margin: 10px auto;
+}
+
+#areYouSureText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Final Message */
+#finalMessage {
     font-size: 1.8rem;
     font-weight: bold;
     margin-top: 20px;
-    padding: 15px;
-    text-shadow: 2px 2px 5px black;
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
     color: white;
-    display: inline-block;
-    border-radius: 10px;
+    text-shadow: 2px 2px 5px black;
+}
+
+/* Dance GIF */
+#danceGif {
+    width: 150px;
+    display: block;
+    margin: 10px auto;
 }
 
 /* Hidden Class */
