@@ -1,0 +1,68 @@
+
+body {
+    background: linear-gradient(to bottom, #ff7eb3, #ff758c);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.question-box {
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #ff4d6d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #ff2847;
+}
+
+.photos {
+    display: none;
+    margin-top: 20px;
+}
+
+.photos img {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.valentine-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.final-message {
+    font-size: 1.3rem;
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+}
