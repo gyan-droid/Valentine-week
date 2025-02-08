@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const yesButton = document.getElementById("yesButton");
     const noButton = document.getElementById("noButton");
+    const initialMessage = document.getElementById("initialMessage");
     const message = document.getElementById("message");
     const valentineImage = document.getElementById("valentineImage");
     const heartContainer = document.getElementById("heartContainer");
@@ -22,17 +23,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    yesButton.addEventListener("click", function () {
-        message.innerHTML = "Yay! You made me the happiest person today! ❤️";
-        message.classList.remove("hidden");
-        valentineImage.classList.remove("hidden");
-        song.play();
+    function showMessage(text) {
+        initialMessage.classList.remove("hidden"); // Show the initial message
+        message.innerHTML = text; // Change message text
+        message.classList.remove("hidden"); // Show message
         showHearts();
+    }
+
+    yesButton.addEventListener("click", function () {
+        showMessage("I caught you, and I'm not gonna let you go. He he he he.");
+        valentineImage.classList.remove("hidden");
+        song.play().catch(error => console.log("Audio playback error:", error));
     });
 
     noButton.addEventListener("click", function () {
-        message.innerHTML = "Oh no! But I'll keep trying! 😜";
-        message.classList.remove("hidden");
-        showHearts();
+        showMessage("You have no option of saying no.<br><br>I caught you, and I'm not gonna let you go. He he he he.");
     });
 });
