@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const yesButton = document.getElementById("yesButton");
     const noButton = document.getElementById("noButton");
-    const initialMessage = document.getElementById("initialMessage");
     const message = document.getElementById("message");
-    const valentineImage = document.getElementById("valentineImage");
     const heartContainer = document.getElementById("heartContainer");
     const song = document.getElementById("valentineSong");
 
@@ -12,9 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
         heart.classList.add("heart");
         heart.innerHTML = "❤️";
         heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = Math.random() * 2 + 3 + "s"; // Varying animation speed
+        heart.style.animationDuration = Math.random() * 2 + 3 + "s";
         heartContainer.appendChild(heart);
-        setTimeout(() => heart.remove(), 4000); // Remove heart after animation
+        setTimeout(() => heart.remove(), 4000);
     }
 
     function showHearts() {
@@ -24,15 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function showMessage(text) {
-        initialMessage.classList.remove("hidden"); // Show the initial message
-        message.innerHTML = text; // Change message text
-        message.classList.remove("hidden"); // Show message
+        message.innerHTML = text;
+        message.classList.remove("hidden");
         showHearts();
     }
 
     yesButton.addEventListener("click", function () {
         showMessage("I caught you, and I'm not gonna let you go. He he he he.");
-        valentineImage.classList.remove("hidden");
         song.play().catch(error => console.log("Audio playback error:", error));
     });
 
