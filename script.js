@@ -1,47 +1,38 @@
-body {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    background-color: #ffe6e6;
-    overflow: hidden;
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const yesButton = document.getElementById("yesButton");
+    const noButton = document.getElementById("noButton");
+    const message = document.getElementById("message");
+    const valentineImage = document.getElementById("valentineImage");
+    const heartContainer = document.getElementById("heartContainer");
+    const song = document.getElementById("valentineSong");
 
-.hidden {
-    display: none;
-}
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 2 + 3 + "s"; // Varying animation speed
+        heartContainer.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000); // Remove heart after animation
+    }
 
-.buttons {
-    margin-top: 20px;
-}
+    function showHearts() {
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createHeart, i * 200);
+        }
+    }
 
-button {
-    font-size: 20px;
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
+    yesButton.addEventListener("click", function () {
+        message.innerHTML = "Yay! You made me the happiest person today! ❤️";
+        message.classList.remove("hidden");
+        valentineImage.classList.remove("hidden");
+        song.play();
+        showHearts();
+    });
 
-#yesButton {
-    background-color: #ff4d4d;
-    color: white;
-}
-
-#noButton {
-    background-color: #999;
-    color: white;
-}
-
-/* Flying Hearts Animation */
-@keyframes fly {
-    0% { transform: translateY(0) scale(1); opacity: 1; }
-    100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
-}
-
-.heart {
-    position: fixed;
-    bottom: 0;
-    font-size: 25px;
-    color: red;
-    animation: fly 4s linear infinite;
-}
+    noButton.addEventListener("click", function () {
+        message.innerHTML = "Oh no! But I'll keep trying! 😜";
+        message.classList.remove("hidden");
+        showHearts();
+    });
+});
