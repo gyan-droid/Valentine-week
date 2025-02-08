@@ -1,68 +1,47 @@
-
 body {
-    background: linear-gradient(to bottom, #ff7eb3, #ff758c);
-    font-family: 'Arial', sans-serif;
     text-align: center;
-    color: white;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffe6e6;
+    overflow: hidden;
 }
 
-.container {
-    padding: 20px;
+.hidden {
+    display: none;
 }
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.message {
-    font-size: 1.2rem;
-    font-style: italic;
-    margin-bottom: 40px;
-}
-
-.question-box {
-    margin-bottom: 30px;
+.buttons {
+    margin-top: 20px;
 }
 
 button {
-    background-color: #ff4d6d;
-    color: white;
-    border: none;
-    border-radius: 8px;
+    font-size: 20px;
     padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
     margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-button:hover {
-    background-color: #ff2847;
-}
-
-.photos {
-    display: none;
-    margin-top: 20px;
-}
-
-.photos img {
-    width: 300px;
-    height: auto;
-    border-radius: 15px;
-    margin: 20px 0;
-}
-
-.valentine-message {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.final-message {
-    font-size: 1.3rem;
-    margin-top: 20px;
-    font-style: italic;
-    font-weight: bold;
+#yesButton {
+    background-color: #ff4d4d;
     color: white;
+}
+
+#noButton {
+    background-color: #999;
+    color: white;
+}
+
+/* Flying Hearts Animation */
+@keyframes fly {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+.heart {
+    position: fixed;
+    bottom: 0;
+    font-size: 25px;
+    color: red;
+    animation: fly 4s linear infinite;
 }
