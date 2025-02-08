@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const firstPage = document.getElementById("firstPage");
+    const thinkAgainPage = document.getElementById("thinkAgainPage");
+    const finalPage = document.getElementById("finalPage");
+
     const yesButton = document.getElementById("yesButton");
     const noButton = document.getElementById("noButton");
-    const message = document.getElementById("message");
+    const thinkYes = document.getElementById("thinkYes");
+    const thinkNo = document.getElementById("thinkNo");
+
     const heartContainer = document.getElementById("heartContainer");
     const song = document.getElementById("valentineSong");
-    const valentineImage = document.getElementById("valentineImage");
-
-    const areYouSureContainer = document.getElementById("areYouSureContainer");
-    const areYouSureYes = document.getElementById("areYouSureYes");
-    const areYouSureNo = document.getElementById("areYouSureNo");
-    const finalMessage = document.getElementById("finalMessage");
 
     let moveNoButton = false;
 
@@ -29,32 +29,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // When "Yes" is clicked on the first page
     yesButton.addEventListener("click", function () {
-        finalMessage.classList.remove("hidden");
-        valentineImage.classList.add("hidden"); // Remove initial image
+        firstPage.classList.add("hidden");
+        finalPage.classList.remove("hidden");
         showHearts();
         song.play().catch(error => console.log("Audio playback error:", error));
     });
 
+    // When "No" is clicked on the first page
     noButton.addEventListener("click", function () {
-        areYouSureContainer.classList.remove("hidden");
+        firstPage.classList.add("hidden");
+        thinkAgainPage.classList.remove("hidden");
     });
 
-    areYouSureNo.addEventListener("click", function () {
+    // When "No" is clicked on "Think Again"
+    thinkNo.addEventListener("click", function () {
         if (!moveNoButton) {
-            areYouSureContainer.classList.add("hidden");
             moveNoButton = true;
         }
 
         // Move the "No" button randomly
-        areYouSureNo.style.position = "absolute";
-        areYouSureNo.style.top = Math.random() * 80 + "vh";
-        areYouSureNo.style.left = Math.random() * 80 + "vw";
+        thinkNo.style.position = "absolute";
+        thinkNo.style.top = Math.random() * 80 + "vh";
+        thinkNo.style.left = Math.random() * 80 + "vw";
     });
 
-    areYouSureYes.addEventListener("click", function () {
-        finalMessage.classList.remove("hidden");
-        valentineImage.classList.add("hidden"); // Remove initial image
+    // When "Yes" is clicked on "Think Again"
+    thinkYes.addEventListener("click", function () {
+        thinkAgainPage.classList.add("hidden");
+        finalPage.classList.remove("hidden");
         showHearts();
         song.play().catch(error => console.log("Audio playback error:", error));
     });
