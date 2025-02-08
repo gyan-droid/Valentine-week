@@ -1,101 +1,57 @@
-/* Pink Romantic Background */
 body {
-    background-color: #ffb6c1; /* Light pink */
-    text-align: center;
+    background: url('file-2KKJAHgbAA8ZwkWFEc8ih4') no-repeat center center fixed;
+    background-size: cover;
     font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
 }
 
-/* Hide pages initially */
+#container {
+    margin-top: 20%;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#yes {
+    background-color: pink;
+}
+
+#no {
+    background-color: red;
+    color: white;
+}
+
 .hidden {
     display: none;
 }
 
-/* Romantic Title */
-.romantic-title {
-    font-size: 2.5rem;
-    margin-top: 50px;
-    text-shadow: 2px 2px 5px black;
-}
-
-/* Centered Content */
-.container {
+#message {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-/* Buttons */
-button {
-    font-size: 18px;
-    padding: 12px 25px;
-    margin: 15px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#yesButton, #thinkYes {
-    background-color: #ff4d4d;
-    color: white;
-}
-
-#noButton, #thinkNo {
-    background-color: #4d79ff;
-    color: white;
-}
-
-button:hover {
-    transform: scale(1.1);
-}
-
-/* Valentine Image */
-#valentineImage {
-    width: 200px;
-    height: auto;
-    margin: 20px auto;
-    display: block;
+    font-size: 24px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
     border-radius: 10px;
 }
 
-/* "Think Again" Section */
-#gunGif {
-    width: 120px;
-    display: block;
-    margin: 10px auto;
-}
-
-#thinkAgainText {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Final Message */
-#finalPage p {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-top: 20px;
-    color: white;
-    text-shadow: 2px 2px 5px black;
-}
-
-/* Dance GIF */
-#danceGif {
-    width: 150px;
-    display: block;
-    margin: 10px auto;
-}
-
-/* Flying Hearts Animation */
 .heart {
     position: absolute;
-    font-size: 24px;
-    animation: floatUp 4s linear infinite;
+    width: 30px;
+    height: 30px;
+    background: url('heart.png') no-repeat center center;
+    background-size: contain;
+    animation: float 3s linear infinite;
 }
 
-@keyframes floatUp {
+@keyframes float {
     0% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(-500px); opacity: 0; }
 }
